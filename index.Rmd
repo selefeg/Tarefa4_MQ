@@ -5,14 +5,12 @@ date: "4 de dezembro de 2020"
 output: ioslides_presentation
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-```
+
 
 ## 
 
 library(readxl)
-Referências:
+ReferÃªncias:
 Andersen, P K, O Borgan, R D Gill, and N Keiding. 1993. Statistical Models Based on Counting Processes. Springer.
 http://www.lampada.uerj.br/arquivosdb/_book2/importExport.html#importExcel
 
@@ -21,8 +19,8 @@ View(Melanoma)
 
 
 
-## Criar um índice formativo, calculado a partir da composição de pelo menos 3 variáveis.
-  a. Aponte um esboço de justificativa teórica para este índice (sucinta, apenas como exercício) e crie um NOME para o índice.
+## Criar um Ã­ndice formativo, calculado a partir da composiÃ§Ã£o de pelo menos 3 variÃ¡veis.
+  a. Aponte um esboÃ§o de justificativa teÃ³rica para este Ã­ndice (sucinta, apenas como exercÃ­cio) e crie um NOME para o Ã­ndice.
   
 #Sexo das pessoas que tiveram melanoma
 Melanoma %>%
@@ -31,7 +29,7 @@ janitor::tabyl(status, sex) %>%
 janitor::adorn_percentages("col") %>%
 janitor::adorn_pct_formatting()
 
-#Pacientes que tiveram faleceu de melanoma e teve úlcera
+#Pacientes que tiveram faleceu de melanoma e teve Ãºlcera
 Melanoma %>%
 drop_na(status, ulcer) %>%
 janitor::tabyl(status, ulcer) %>%
@@ -41,7 +39,7 @@ janitor::adorn_pct_formatting()
 
 ## 
 
-```Testar a confiabilidade deste índice utilizando o alpha de Cronbach.
+```Testar a confiabilidade deste Ã­ndice utilizando o alpha de Cronbach.
 
 library(psych)
 psych::alpha(Melanoma)
@@ -49,9 +47,9 @@ psych::alpha(Melanoma)
 
 ## 
 
-```Produzir pelo menos um gráfico com a distribuição e alguns números-resumo do índice.
+```Produzir pelo menos um grÃ¡fico com a distribuiÃ§Ã£o e alguns nÃºmeros-resumo do Ã­ndice.
 
-Gráfico
+GrÃ¡fico
 Melanoma %>%
 ggplot() +
 geom_histogram(aes(status), bins = 4)
